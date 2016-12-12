@@ -1,0 +1,67 @@
+{
+  "name": "ember-redux-shim",
+  "version": "0.0.0",
+  "description": "Redux for Ember apps",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "lint": "npm run lint-js && npm run lint-md",
+    "lint-js": "eslint *.js addon app blueprints config tests",
+    "lint-md": "remark *.md",
+    "start": "ember server",
+    "test": "npm run lint && ember test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ciena-blueplanet/ember-redux-shim.git"
+  },
+  "homepage": "https://github.com/ciena-blueplanet/ember-redux-shim",
+  "engines": {
+    "node": ">= 5.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ciena-blueplanet/ember-redux-shim/issues"
+  },
+  "author": "Matthew Dahl (https://github.com/sandersky)",
+  "license": "MIT",
+  "devDependencies": {
+    "broccoli-asset-rev": "^2.4.6",
+    "ember-cli": "^2.7.0",
+    "ember-cli-app-version": "^2.0.0",
+    "ember-cli-chai": "^0.3.1",
+    "ember-cli-dependency-checker": "^1.2.0",
+    "ember-cli-htmlbars-inline-precompile": "^0.3.5",
+    "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-cli-mocha": "0.13.1",
+    "ember-cli-test-loader": "^1.1.0",
+    "ember-cli-uglify": "^1.2.0",
+    "ember-disable-prototype-extensions": "^1.1.0",
+    "ember-export-application-global": "^1.0.5",
+    "ember-load-initializers": "0.6.3",
+    "ember-lodash-shim": "1.0.1",
+    "ember-resolver": "^2.0.3",
+    "ember-symbol-observable": "0.1.2",
+    "eslint": "^3.3.1",
+    "eslint-config-frost-standard": "^5.0.1",
+    "loader.js": "^4.0.11",
+    "redux": "3.6.0",
+    "remark-cli": "^2.1.0",
+    "remark-lint": "^5.2.0"
+  },
+  "keywords": [
+    "ember-addon",
+    "redux"
+  ],
+  "dependencies": {
+    "broccoli-merge-trees": "^1.1.4",
+    "broccoli-replace": "^0.12.0",
+    "ember-cli-babel": "^5.1.9",
+    "ember-cli-htmlbars": "^1.1.0"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}

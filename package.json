@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ciena-blueplanet/ember-redux-shim.git"
+    "url": "https://github.com/ember-redux/ember-redux-shim.git"
   },
-  "homepage": "https://github.com/ciena-blueplanet/ember-redux-shim",
+  "homepage": "https://github.com/ember-redux/ember-redux-shim",
   "engines": {
     "node": ">= 5.0.0"
   },
   "bugs": {
-    "url": "https://github.com/ciena-blueplanet/ember-redux-shim/issues"
+    "url": "https://github.com/ember-redux/ember-redux-shim/issues"
   },
   "author": "Matthew Dahl (https://github.com/sandersky)",
   "license": "MIT",

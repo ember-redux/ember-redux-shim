@@ -1,3 +1,8 @@
+# 0.0.3
+
+* **Updated** CI to work with new Github organization.
+
+
 # 0.0.2
 
 * **Fixed** tree to use consumers current Ember environment.

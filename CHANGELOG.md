@@ -1,3 +1,8 @@
+# 0.0.4
+
+* **Updated** Travis config to publish as npm user `ember-redux`.
+
+
 # 0.0.3
 
 * **Updated** CI to work with new Github organization.

@@ -1,3 +1,16 @@
+# 1.0.0
+
+* **Removed** unnecessary files from npm package so the package is slightly smaller to pull down. The package from npm will now contain the following:
+
+  *  `blueprints/`
+     * `ember-redux-shim/`
+       * `index.js`
+  * `CHANGELOG.md`
+  * `index.js`
+  * `LICENSE.md`
+  * `packag.json`
+  * `README.md`
+
 # 0.0.5
 
 * **Removed** `.pullapprove.yml` since PullApprove is not used on this repo.

@@ -1,3 +1,9 @@
+# 1.0.1
+
+* **Added** more Ember versions to CI builds to ensure addon is working with latest versions of Ember.
+* **Upgraded** all `devDependencies` to latest versions.
+
+
 # 1.0.0
 
 * **Removed** unnecessary files from npm package so the package is slightly smaller to pull down. The package from npm will now contain the following:

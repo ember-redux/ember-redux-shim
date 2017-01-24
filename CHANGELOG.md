@@ -1,3 +1,8 @@
+# 1.0.2
+
+* **Upgraded** to test against Ember 2.11.
+
+
 # 1.0.1
 
 * **Added** more Ember versions to CI builds to ensure addon is working with latest versions of Ember.

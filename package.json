@@ -63,5 +63,12 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "ember-lodash-shim": {
+    "includes": [
+      "isPlainObject"
+    ],
+    "includeLodash3Exports": false,
+    "whitelist": true
   }
 }

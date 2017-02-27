@@ -38,6 +38,10 @@ module.exports = {
         {
           match: /process\.env\.NODE_ENV/g,
           replacement: `"${app.env}"`
+        },
+        {
+          match: /import isPlainObject from 'lodash\/isPlainObject'/g,
+          replacement: "import lodash from 'lodash'\nconst isPlainObject = lodash.isPlainObject"
         }
       ]
     })

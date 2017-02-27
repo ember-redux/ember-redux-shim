@@ -40,7 +40,7 @@
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.1.1",
     "ember-load-initializers": "0.6.3",
-    "ember-lodash-shim": "^1.2.0",
+    "ember-lodash-shim": "^2.0.0",
     "ember-resolver": "^2.1.1",
     "ember-symbol-observable": "0.1.2",
     "ember-test-utils": "^1.10.3",
@@ -59,12 +59,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "ember-lodash-shim": {
-    "includes": [
-      "isPlainObject"
-    ],
-    "includeLodash3Exports": false,
-    "whitelist": true
   }
 }

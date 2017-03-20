@@ -51,7 +51,6 @@
     "redux"
   ],
   "dependencies": {
-    "broccoli-merge-trees": "^1.1.4",
     "broccoli-replace": "^0.12.0",
     "ember-cli-babel": "^5.1.9",
     "ember-cli-htmlbars": "^1.1.0",

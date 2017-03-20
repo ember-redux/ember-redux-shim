@@ -44,8 +44,7 @@
     "ember-resolver": "^2.1.1",
     "ember-symbol-observable": "0.1.2",
     "ember-test-utils": "^1.10.3",
-    "loader.js": "^4.1.0",
-    "redux": "3.6.0"
+    "loader.js": "^4.1.0"
   },
   "keywords": [
     "ember-addon",
@@ -55,7 +54,9 @@
     "broccoli-merge-trees": "^1.1.4",
     "broccoli-replace": "^0.12.0",
     "ember-cli-babel": "^5.1.9",
-    "ember-cli-htmlbars": "^1.1.0"
+    "ember-cli-htmlbars": "^1.1.0",
+    "ember-cli-node-assets": "^0.2.0",
+    "redux": "3.6.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

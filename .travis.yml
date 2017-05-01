@@ -1,73 +1,38 @@
-sudo: required
-dist: trusty
+---
 language: node_js
-
 node_js:
-- '6.9.1'
-- 'stable'
+  - "6"
+
+sudo: false
+dist: trusty
 
 addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    - google-chrome
-    packages:
-    - google-chrome-stable
-    - g++-4.8
-  firefox: 'latest-esr'
+  firefox: "51.0"
 
 cache:
-  directories:
-    - node_modules
+  yarn: true
 
 env:
   matrix:
-  - EMBER_TRY_SCENARIO=ember-1-12
   - EMBER_TRY_SCENARIO=ember-1-13
-  - EMBER_TRY_SCENARIO=ember-2-0
-  - EMBER_TRY_SCENARIO=ember-2-1
-  - EMBER_TRY_SCENARIO=ember-2-2
-  - EMBER_TRY_SCENARIO=ember-2-3
   - EMBER_TRY_SCENARIO=ember-2-4
-  - EMBER_TRY_SCENARIO=ember-2-5
-  - EMBER_TRY_SCENARIO=ember-2-6
-  - EMBER_TRY_SCENARIO=ember-2-7
   - EMBER_TRY_SCENARIO=ember-2-8
-  - EMBER_TRY_SCENARIO=ember-2-9
   - EMBER_TRY_SCENARIO=ember-2-10
   - EMBER_TRY_SCENARIO=default
-  - EMBER_TRY_SCENARIO=ember-release
-  - EMBER_TRY_SCENARIO=ember-beta
-  - EMBER_TRY_SCENARIO=ember-canary
-  global:
-    - CXX=g++-4.8
-    - secure: RDPyQXdvFsgD5780P61DRJDDgANhaIsLhBGE6E2n82GdFHuQoEO9UCVLTUBGwDQsKo0UbNX6FAMnC+ijTRHyYUlqaUXW9N+xLPY300znQlT4eXQlNepuD33BpAugvguV4vXV+N7bsNZsBjhjcaImQtjd1Xg2ax3+LW5a/OpHTpubM7+Pb2l7W+AaFWjJjNeldjAeLit3yvTVZ0KVKuNChvC8IyjwOYa85YYPyND8Chs6TGyF9Cbl5PiIym26ocoJjcwaaykB48JiURU++wcGYKTEHsDzGtSmK1zvcLGEYoNgb5fl/2YFMEW1qyntQpNdh2JwGGNNgo77pPztcHKEM7oa+Wdjjvxb+yeBnP3/gxyNbNutQ892iKrR2ujOlZqkppnl2v7Y8LJKKjAjuLNLH3ugP7E/0F4P7jhwiEExVJCA27IVN6nH2nGebZOf+PyA9ntf3GGws6C1Rlx6fl+gnzNnFG77yvI/sGAKbBdt/UaMFSu+UcooAiQSdWwJEalxtzsuRqLV3okC7AIp0TTNVzTAMEGvMXLgZsmqZF8xeMIGaNIAwm1EuSRxoTdQ2HUKFwgLHgOMygEuXmxBsJGxgeJ1oSU8uEQ82I0asKk7J0MHVUlP1fx0dzXFYi9tdQMgKxuv0pdydQFFtoHci/9/znojFmFfWEmbI01m5sDWgAc=
-
-matrix:
-  fast_finish: true
-  allow_failures:
-  - env: EMBER_TRY_SCENARIO=ember-beta
-  - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-- npm config set spin false
-- npm install -g coveralls pr-bumper
-- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - "npm config set spin false"
+  - "npm install -g npm@^2"
 
 install:
-- $(npm root -g)/pr-bumper/.travis/maybe-install.sh
-
-before_script:
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
-- sleep 3 # give xvfb some time to start
+  - yarn install --no-lockfile
 
 script:
-- $(npm root -g)/pr-bumper/.travis/maybe-test.sh
-- .travis/maybe-bump-version.sh
-
-after_success:
-- .travis/maybe-publish-coverage.sh
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
 
 deploy:
   provider: npm
@@ -80,7 +45,3 @@ deploy:
     condition: "$EMBER_TRY_SCENARIO = 'default'"
     node: 'stable'
     tags: true
-
-notifications:
-  slack:
-    secure: REHG30SgCx0xdSyvsnCAp5tm3o9JIJYEHaJe18LEzSp5zYfnEPmb15eC29cVKA+2bv0QQtpWhKLPK8piAv4pbMC6D9kbogtjG6QrGyZMrA63QE3mmQGo9U9jTZtg+JkbCPKckIMpVI+UqexfW3BIxxjzWJjKNcKcih90ASgYhtGxxTqVPCZn/q6eskDHUjqgxitkAY3MnkydvII4pPWPM7wSP5PXd5saPOpxiI10AJnZDWwJMF/TSOA/ia/RyAT1d8EnaCyC6H+wDXVY55Sx760+I6o/nmtN6VR+cqJR4BjIxuk12f2DV8t2zJLKfqK7pKjWjPsRFy38bC4exe2a35d/KinAXESZIsnKp+ZoGw+8ysf8uplpmNePG06C0MVOodDLyOkYKmRVp3yq/IOhgc4gUODC8GikaJHf1BEMn1zBQPDKjRJkKZISJQHlohnpdO7hWSNG4ugX8iY1QkcBGGkdxgk4l2X/RK1H8cBpPHuuY/2kohWk7zg7Ovj2BJH8CoX/+OOipzvoo9tvsrEQgmRNy1FszueQijG5hS09DKZ1v2hjH41PxwBNiD06SsvhXSOBHMFVVdCO0hdqGWdxVe/Bk0U9HGUK9Qqg27ZiaEm+7dGhelecSvm61oRcokaYBTxuNxW6xDdOo+yAJonO/TvZs5mg+rpaWxp3McNSt2Q=

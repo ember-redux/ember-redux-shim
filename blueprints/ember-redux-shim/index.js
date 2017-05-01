@@ -7,7 +7,8 @@ module.exports = {
         return this.addAddonsToProject({
           packages: [
             {name: 'ember-lodash-shim', target: '^2.0.0'},
-            {name: 'ember-symbol-observable', target: '0.1.2'}
+            {name: 'ember-symbol-observable', target: '0.1.2'},
+            {name: 'babel-plugin-transform-object-rest-spread', target: '6.23.0'}
           ]
         })
       })

@@ -53,7 +53,7 @@
   "dependencies": {
     "broccoli-merge-trees": "^1.1.4",
     "broccoli-replace": "^0.12.0",
-    "ember-cli-babel": "^6.0.0-beta.4",
+    "ember-cli-babel": "^6.1.0",
     "ember-cli-htmlbars": "^1.1.1",
     "broccoli-babel-transpiler": "6.0.0-alpha.1",
     "babel-plugin-transform-object-rest-spread": "^6.19.0"

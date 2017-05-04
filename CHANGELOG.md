@@ -1,3 +1,7 @@
+# 1.1.2 (2017-05-04)
+
+* **Fixed** build for real this time.
+
 # 1.1.1
 
 * **Fixed** build for real this time.

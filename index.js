@@ -4,7 +4,6 @@
 const path = require('path');
 const mergeTrees = require('broccoli-merge-trees');
 const replace = require('broccoli-replace');
-const esTranspiler = require('broccoli-babel-transpiler');
 
 module.exports = {
   name: 'redux',
@@ -14,7 +13,7 @@ module.exports = {
    up to the host application.
    This prevents previous addons (prior to `this.import`, ca 2.7.0)
    to break at importing assets when they are used nested in other addons.
-  */
+   */
   _findHost: function () {
     var current = this;
     var app;
@@ -25,7 +24,7 @@ module.exports = {
       app = current.app || app
     } while (current && current.parent && current.parent.parent && (current = current.parent))
 
-    return app;
+      return app;
   },
 
   treeForAddon (tree) {
@@ -48,10 +47,15 @@ module.exports = {
       ]
     });
 
-    reduxTree = esTranspiler(reduxTree, {
-      plugins: [
-        'transform-object-rest-spread'
-      ]
+    let addon = this.addons.find(addon => addon.name === 'ember-cli-babel');
+
+    reduxTree = addon.transpileTree(reduxTree, {
+      babel: {
+        plugins: ['babel-plugin-transform-object-rest-spread']
+      },
+      'ember-cli-babel': {
+        compileModules: false
+      }
     });
 
     if (!tree) {

@@ -1,5 +1,4 @@
-import {expect} from 'chai'
-import {describe, it} from 'mocha'
+import { test, module } from 'qunit';
 
 import {
   applyMiddleware,
@@ -9,24 +8,24 @@ import {
   createStore
 } from 'redux'
 
-describe('redux', function () {
-  it('exports applyMiddleware', function () {
-    expect(applyMiddleware).not.to.equal(undefined)
-  })
+module('Unit | Redux | Tests');
 
-  it('exports bindActionCreators', function () {
-    expect(bindActionCreators).not.to.equal(undefined)
-  })
+test('exports applyMiddleware', function(assert) {
+  assert.equal(typeof applyMiddleware, 'function');
+});
 
-  it('exports combineReducers', function () {
-    expect(combineReducers).not.to.equal(undefined)
-  })
+test('exports bindActionCreators', function(assert) {
+  assert.equal(typeof bindActionCreators, 'function');
+});
 
-  it('exports compose', function () {
-    expect(compose).not.to.equal(undefined)
-  })
+test('exports combineReducers', function(assert) {
+  assert.equal(typeof combineReducers, 'function');
+});
 
-  it('exports createStore', function () {
-    expect(createStore).not.to.equal(undefined)
-  })
-})
+test('exports compose', function(assert) {
+  assert.equal(typeof compose, 'function');
+});
+
+test('exports createStore', function(assert) {
+  assert.equal(typeof createStore, 'function');
+});

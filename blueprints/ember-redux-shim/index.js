@@ -1,7 +1,7 @@
 module.exports = {
   afterInstall: function () {
     return this.addPackagesToProject([
-      {name: 'redux', target: '3.7.0'}
+      {name: 'redux', target: '3.7.2'}
     ])
       .then(() => {
         return this.addAddonsToProject({

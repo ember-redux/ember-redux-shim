@@ -1,6 +1,6 @@
 {
   "name": "ember-redux-shim",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Redux for Ember apps",
   "directories": {
     "doc": "doc",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
-    "ember-cli": "2.15.0-beta.2",
+    "ember-cli": "2.15.0",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-htmlbars": "^2.0.1",
@@ -43,7 +43,7 @@
     "ember-lodash-shim": "^2.0.0",
     "ember-resolver": "^4.0.0",
     "ember-symbol-observable": "1.0.0",
-    "ember-source": "~2.15.0-beta.2",
+    "ember-source": "~2.15.0",
     "ember-cli-shims": "^1.1.0",
     "loader.js": "^4.2.3",
     "redux": "3.7.2"
@@ -55,7 +55,7 @@
   "dependencies": {
     "broccoli-merge-trees": "^1.1.4",
     "broccoli-replace": "^0.12.0",
-    "ember-cli-babel": "^6.8.1",
+    "ember-cli-babel": "^6.8.2",
     "babel-plugin-transform-object-rest-spread": "^6.19.0"
   },
   "ember-addon": {

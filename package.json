@@ -1,6 +1,6 @@
 {
   "name": "ember-redux-shim",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Redux for Ember apps",
   "directories": {
     "doc": "doc",

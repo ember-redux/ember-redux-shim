@@ -7,32 +7,26 @@ sudo: false
 dist: trusty
 
 addons:
-  firefox: "51.0"
+  chrome: stable
 
 cache:
   yarn: true
 
 env:
-  matrix:
-  - EMBER_TRY_SCENARIO=ember-1-13
-  - EMBER_TRY_SCENARIO=ember-2-4
-  - EMBER_TRY_SCENARIO=ember-2-8
-  - EMBER_TRY_SCENARIO=ember-2-10
-  - EMBER_TRY_SCENARIO=default
+  - EMBER_TRY_SCENARIO=ember-2.18.X
+  - EMBER_TRY_SCENARIO=ember-3.1.X
+  - EMBER_TRY_SCENARIO=ember-beta
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "npm config set spin false"
-  - "npm install -g npm@^2"
 
 install:
-  - yarn install --no-lockfile
+  - yarn install --no-lockfile --non-interactive
 
 script:
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+  - yarn lint:js
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
 
 deploy:
   provider: npm

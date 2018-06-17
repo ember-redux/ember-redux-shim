@@ -47,7 +47,7 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.2.0",
     "ember-source-channel-url": "^1.0.1",
-    "ember-symbol-observable": "1.0.1",
+    "ember-symbol-observable": "1.0.2",
     "ember-try": "^0.2.23",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
@@ -61,7 +61,7 @@
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.19.0",
     "broccoli-merge-trees": "^1.1.4",
-    "broccoli-replace": "^0.12.0",
+    "broccoli-string-replace": "^0.1.2",
     "ember-cli-babel": "^6.8.2"
   },
   "ember-addon": {

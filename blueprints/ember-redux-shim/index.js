@@ -6,7 +6,7 @@ module.exports = {
       .then(() => {
         return this.addAddonsToProject({
           packages: [
-            {name: 'ember-symbol-observable', target: '1.0.1'}
+            {name: 'ember-symbol-observable', target: '1.0.2'}
           ]
         })
       })

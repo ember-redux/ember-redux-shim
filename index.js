@@ -3,7 +3,7 @@
 
 const path = require('path');
 const mergeTrees = require('broccoli-merge-trees');
-const replace = require('broccoli-replace');
+const replace = require('broccoli-string-replace');
 
 module.exports = {
   name: 'redux',
@@ -34,7 +34,7 @@ module.exports = {
 
     // Fix import paths to not include ".js" extension in name
     reduxTree = replace(reduxTree, {
-      files: '**/*.js',
+      files: [ '**/*.js' ],
       patterns: [
         {
           match: /process\.env\.NODE_ENV/g,
